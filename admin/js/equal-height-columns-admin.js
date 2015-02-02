@@ -3,12 +3,15 @@
 
 	$( document ).ready( function() {
 		
+		// First, if there is only one row, disable the 'Remove' button.
+		doRemoveButtonCheck();
+
 		/**
 		 * Add an element group.
 		 *
 		 * @since  1.0.0
 		 */
-		$( '.add-element' ).on( 'click', function() {
+		$( '.add-group' ).on( 'click', function() {
 
 			// Disable buttons to prevent wonkiness during fade.
 			disableButtons();
@@ -60,7 +63,7 @@
 		 *
 		 * @since  1.0.0
 		 */
-		$( '.remove-element' ).on( 'click', function() {
+		$( '.remove-group' ).on( 'click', function() {
 
 			// Disable buttons to prevent wonkiness during fade.
 			disableButtons();
@@ -75,11 +78,6 @@
 				
 				// Enable buttons again to prevent wonkiness during fade.
 				enableButtons();
-
-				// Disable last 'remove' button if only one row is left.
-				if ( $currentRow.siblings( 'tr' ).size() <= 1 ) {
-					$( '.remove-element' ).addClass( 'disabled' );
-				}
 
 			});
 			
@@ -116,12 +114,44 @@
 
 	});
 
+	// Disable all buttons.
 	function disableButtons() {
-		$( '.add-element, .remove-element' ).addClass( 'disabled' );
+		disableAddButtons();
+		disableRemoveButtons();
 	}
 
+	// Disable only 'Add' buttons.
+	function disableAddButtons() {
+		$( '.add-group' ).addClass( 'disabled' );
+	}
+
+	// Disable only 'Remove' buttons.
+	function disableRemoveButtons() {
+		$( '.remove-group' ).addClass( 'disabled' );
+	}
+
+	// Enable all buttons.
 	function enableButtons() {
-		$( '.add-element, .remove-element' ).removeClass( 'disabled' );
+		enableAddButtons();
+		enableRemoveButtons();
+	}
+
+	// Enable only 'Add' buttons.
+	function enableAddButtons() {
+		$( '.add-group' ).removeClass( 'disabled' );
+	}
+
+	// Enable only 'Remove' buttons.
+	function enableRemoveButtons() {
+		$( '.remove-group' ).removeClass( 'disabled' );
+		doRemoveButtonCheck();
+	}
+
+	// Disable remove buttons if there is only one left.
+	function doRemoveButtonCheck() {
+		if ( $( 'button.remove-group' ).length <= 1 ) {
+			disableRemoveButtons();
+		}
 	}
 
 })( jQuery );

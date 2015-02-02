@@ -11,7 +11,7 @@
 				var selector = args.selector;
 				var breakpoint = args.breakpoint;
 				$( selector ).equalHeights( null, null, breakpoint );
-				
+
 			});
 
 		});

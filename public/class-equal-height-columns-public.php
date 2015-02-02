@@ -50,6 +50,15 @@ class Equal_Height_Columns_Public {
 	private $version;
 
 	/**
+	 * Options for this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      array    $options    The options stored for this plugin.
+	 */
+	private $options;
+
+	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
@@ -72,18 +81,6 @@ class Equal_Height_Columns_Public {
 	 */
 	public function enqueue_styles() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Equal_Height_Columns_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Equal_Height_Columns_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/equal-height-columns-public.css', array(), $this->version, 'all' );
 
 	}
@@ -95,19 +92,11 @@ class Equal_Height_Columns_Public {
 	 */
 	public function enqueue_scripts() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Equal_Height_Columns_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Equal_Height_Columns_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/equal-height-columns-public.js', array( 'jquery' ), $this->version, false );
+		
+		// Pass options to JS.
+		$this->options = get_option( $this->plugin_name );
+		wp_localize_script( $this->plugin_name, 'equalHeightColumnElements', $this->options );
 
 	}
 

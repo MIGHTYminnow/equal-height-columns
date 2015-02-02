@@ -200,14 +200,39 @@ class Equal_Height_Columns_Admin {
 
 	function output_elements_fields( $args ) {
 
+		// Set spacer variable
+		$spacer = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+
+		// Selector input
 		printf(
-            '<input type="text" id="%s" name="%s[%s][%s]" data-index="%s" value="%s" /> <button type="button" class="button remove-element">%s</button>',
+            '<input type="text" id="%s" name="%s[%s][%s][%s]" data-index="%s" value="%s" />%s',
             $args['id'],
             $this->plugin_name,
             $args['id'],
             $args['index'],
+            'selector',
             $args['index'],
-            isset( $this->options[ $args['id'] ][ $args['index'] ] ) ? esc_attr( $this->options[ $args['id'] ][ $args['index'] ] ) : '',
+            isset( $this->options[ $args['id'] ][ $args['index'] ]['selector'] ) ? esc_attr( $this->options[ $args['id'] ][ $args['index'] ]['selector'] ) : '',
+            $spacer
+        );
+
+		// Breakpoint input
+        printf(
+            '<small>%s</small> <input type="number" id="%s" name="%s[%s][%s][%s]" data-index="%s" value="%s" /> px%s',
+            __( 'Breakpoint:', 'equal-height-columns' ),
+            'breakpoint',
+            $this->plugin_name,
+            $args['id'],
+            $args['index'],
+            'breakpoint',
+            $args['index'],
+            isset( $this->options[ $args['id'] ][ $args['index'] ]['breakpoint'] ) ? esc_attr( $this->options[ $args['id'] ][ $args['index'] ]['breakpoint'] ) : '768',
+            $spacer
+        );
+
+        // Remove button
+        printf(
+            '<button type="button" class="button remove-element">%s</button>',
             __( 'Remove', 'equal-height-columns' )
         );
 

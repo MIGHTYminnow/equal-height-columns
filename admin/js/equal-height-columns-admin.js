@@ -1,5 +1,4 @@
 (function( $ ) {
-	
 	'use strict';
 
 	$( document ).ready( function() {
@@ -38,7 +37,13 @@
 			$input.attr( 'data-index', newIndex);
 
 			// Remove copied value from new input.
-			$input.val( '' );
+			$input.val( function() {
+				if ( 'breakpoint' == $(this).attr( 'id' ) ) {
+					return 768;
+				} else {
+					return '';
+				}
+			})
 
 			// Insert new row at end of list.
 			$newRow.hide().insertAfter( $lastRow ).fadeIn( 800, function() {
@@ -70,6 +75,12 @@
 				
 				// Enable buttons again to prevent wonkiness during fade.
 				enableButtons();
+
+				// Disable last 'remove' button if only one row is left.
+				if ( $currentRow.siblings( 'tr' ).size() <= 1 ) {
+					$( '.remove-element' ).addClass( 'disabled' );
+				}
+
 			});
 			
 			function updateSubsequentRows( ) {

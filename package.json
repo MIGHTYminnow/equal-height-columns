@@ -1,0 +1,30 @@
+{
+  "name": "equal-height-columns",
+  "title": "Equal Height Columns",
+  "description": "Apply equal heights to uneven columns and elements.",
+  "version": "1.0.0",
+  "homepage": "http://wordpress.org/plugins/equal-height-columns",
+  "author": {
+    "name": "MIGHTYminnow, Mickey Kay, Braad Martin",
+    "email": "mickeyskay@gmail.com",
+    "url": "http://mightyminnow.com"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-nodeunit": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-csscomb": "latest",
+    "grunt-regex-replace": "latest",
+    "grunt-contrib-compress": "latest",
+    "grunt-dev-update": "latest",
+    "grunt-wp-i18n": "latest",
+    "load-grunt-tasks": "latest"
+  },
+  "keywords": []
+}

@@ -68,7 +68,7 @@
              // Equalize column heights if above the specified breakpoint
              if ( width >= breakPoint ) {
              	if((maxHeight) && tallest > maxHeight) tallest = maxHeight;
-             	console.log(tallest);
+             	
              	return items.each(function() {
              		$(this).height(tallest);
              	});

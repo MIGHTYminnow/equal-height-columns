@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  * The code that runs during plugin activation.
  * This action is documented in includes/class-equal-height-columns-activator.php
  */
-function activate_plugin_name() {
+function activate_equal_height_columns() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-equal-height-columns-activator.php';
 	Equal_Height_Columns_Activator::activate();
 }
@@ -43,13 +43,13 @@ function activate_plugin_name() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-equal-height-columns-deactivator.php
  */
-function deactivate_plugin_name() {
+function deactivate_equal_height_columns() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-equal-height-columns-deactivator.php';
 	Equal_Height_Columns_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'activate_equal_height_columns' );
+register_deactivation_hook( __FILE__, 'deactivate_equal_height_columns' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -66,10 +66,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-equal-height-columns.php';
  *
  * @since    1.0.0
  */
-function run_plugin_name() {
+function run_equal_height_columns() {
 
 	$plugin = new Equal_Height_Columns();
 	$plugin->run();
 
 }
-run_plugin_name();
+run_equal_height_columns();

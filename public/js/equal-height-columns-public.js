@@ -44,7 +44,7 @@
  */
 ( function( $ ) {
 
-    // debouncing function from John Hann
+    // Debouncing function from John Hann
     // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
     var debounce = function( func, threshold ) {
 
@@ -72,7 +72,7 @@
                 clearTimeout( timeout );
             }
 
-            // Set the timer to 100ms and have it call delayed() when it completes
+            // Set the timer to 50ms and have it call delayed() when it completes
             timeout = setTimeout( delayed, threshold || 50 );
         };
     };
@@ -144,8 +144,8 @@
             if ( ! eventSet ) {
 
                 // Namespace it and debounce it to be safe
-                    $( window ).on( eventName, debounce( triggerEqualHeights ) );
-                }
+                $( window ).on( eventName, debounce( triggerEqualHeights ) );
+            }
         });
     
         // Trigger the first equalizing

@@ -225,36 +225,35 @@ class Equal_Height_Columns_Admin {
 
 	function output_elements_fields( $args ) {
 
-		// Set spacer variable
-		$spacer = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-
 		// Selector input
+		$field_id = 'selector-' . $args['index'];
 		printf(
-            '<small>%s</small> <input type="text" id="%s" name="%s[%s][%s][%s]" data-index="%s" value="%s" placeholder="%s" />%s',
+            '<div class="ehc-input-wrapper"><label for="%s">%s</label> <input type="text" id="%s" name="%s[%s][%s][%s]" data-index="%s" value="%s" placeholder="%s" /></div>',
+            $field_id,
             __( 'Selector:', 'equal-height-columns' ),
-            'selector',
+            $field_id,
             $this->plugin_name,
             $args['id'],
             $args['index'],
             'selector',
             $args['index'],
             isset( $this->options[ $args['id'] ][ $args['index'] ]['selector'] ) ? esc_attr( $this->options[ $args['id'] ][ $args['index'] ]['selector'] ) : '',
-            __( '.col-1, .col-2, .col-3', 'equal-height-columns' ),
-            $spacer
+            __( '.col-1, .col-2, .col-3', 'equal-height-columns' )
         );
 
 		// Breakpoint input
+		$field_id = 'breakpoint-' . $args['index'];
         printf(
-            '<small>%s</small> <input type="number" id="%s" name="%s[%s][%s][%s]" data-index="%s" value="%s" /> px%s',
+            '<div class="ehc-input-wrapper"><label for="%s">%s</label> <input type="number" id="%s" name="%s[%s][%s][%s]" data-index="%s" value="%s" /> px</div>',
+            $field_id,
             __( 'Breakpoint:', 'equal-height-columns' ),
-            'breakpoint',
+            $field_id,
             $this->plugin_name,
             $args['id'],
             $args['index'],
             'breakpoint',
             $args['index'],
-            isset( $this->options[ $args['id'] ][ $args['index'] ]['breakpoint'] ) ? esc_attr( $this->options[ $args['id'] ][ $args['index'] ]['breakpoint'] ) : '768',
-            $spacer
+            isset( $this->options[ $args['id'] ][ $args['index'] ]['breakpoint'] ) ? esc_attr( $this->options[ $args['id'] ][ $args['index'] ]['breakpoint'] ) : '768'
         );
 
         // Remove button

@@ -2,3 +2,28 @@
  * All of the CSS for your dashboard-specific functionality should be
  * included in this file.
  */
+
+.ehc-input-wrapper {
+	margin-bottom: 1em;
+}
+
+.ehc-input-wrapper label {
+	display: block;
+}
+
+.ehc-input-wrapper input[type="text"] {
+	min-width: 300px;
+}
+
+@media ( min-width: 768px ) {
+	
+	.ehc-input-wrapper {
+		display: inline-block;
+		margin-right: 2em;
+	}
+
+	.ehc-input-wrapper label {
+		display: inline;
+	}
+
+}

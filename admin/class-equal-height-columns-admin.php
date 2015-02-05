@@ -204,7 +204,7 @@ class Equal_Height_Columns_Admin {
 
 			// Validate selector.
 			$selector = $group['selector'];
-			$input[ $this->options_group_slug ][ $key ]['selector'] = wp_kses( $selector );
+			$input[ $this->options_group_slug ][ $key ]['selector'] = wp_kses_post( $selector );
 
 			// Validate breakpoint.
 			$breakpoint = $group['breakpoint'];

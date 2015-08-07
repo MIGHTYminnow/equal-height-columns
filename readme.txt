@@ -4,7 +4,7 @@ Donate link:       http://mightyminnow.com
 Tags:              equal, height, column, div, element, jQuery, JavaScript
 Requires at least: 3.5
 Tested up to:      4.2
-Stable tag:        1.0.0
+Stable tag:        1.0.2
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,10 @@ jQuery( window ).trigger( 'equalheights' );
 
 == Changelog ==
 
+= 1.0.2 =
+* Only load admin JS on EHC settings page
+* Make admin settings wrapper class and jQuery more specific to avoid potential conflicts
+
 = 1.0.1 =
 * Improve admin (Mm)
 
@@ -99,6 +103,10 @@ jQuery( window ).trigger( 'equalheights' );
 * First release
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+* Only load admin JS on EHC settings page
+* Make admin settings wrapper class and jQuery more specific to avoid potential conflicts
 
 = 1.0.1 =
 * Improve admin (Mm)

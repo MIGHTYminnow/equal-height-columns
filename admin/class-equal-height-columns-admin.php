@@ -89,9 +89,11 @@ class Equal_Height_Columns_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts( $hook = '' ) {
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/equal-height-columns-admin.js', array( 'jquery' ), $this->version, false );
+		if ( ( 'settings_page_' . $this->plugin_name ) == $hook ) {
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/equal-height-columns-admin.js', array( 'jquery' ), $this->version, false );
+		}
 
 	}
 

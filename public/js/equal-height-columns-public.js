@@ -190,7 +190,7 @@
     function doEqualHeights( selector, args ) {
 
         // Scope our variables
-        var $items, minHeight, maxHeight, breakPoint, tallest, e, a, width;
+        var $items, minHeight, maxHeight, breakPoint;
 
         // Grab the collection of items fresh from the DOM
         $items = $( selector );
@@ -200,9 +200,29 @@
         maxHeight = args.maxHeight;
         breakPoint = args.breakPoint;
 
+        $items.equalizeTheHeights( minHeight, maxHeight, breakPoint );
+
+    }
+
+    /**
+     * Manually/directly equalize the heights of elements in a jQuery object collection.
+     *
+     * @since 1.1.0
+     *
+     * @param int minHeight Minimum height for elements after resizing.
+     * @param int maxHeight Maximum height for elements after resizing.
+     * @param int breakPoint Breakpoint above which to equalize heights.
+     *
+     * @return jQuery collection of targeted elements.
+     */
+    $.fn.equalizeTheHeights = function( minHeight, maxHeight, breakPoint ) {
+
+        // Scope our variables
+        var tallest, e, a, width;
+
         // Calculate the tallest item
         tallest = ( minHeight ) ? minHeight : 0;
-        $items.each( function() {
+        $( this ).each( function() {
             $( this ).outerHeight( 'auto' );
             if ( $( this ).outerHeight() > tallest ) {
                 tallest = $( this ).outerHeight();
@@ -223,10 +243,11 @@
             if ( ( maxHeight ) && tallest > maxHeight ) {
                 tallest = maxHeight;
             }
-            return $items.each( function() {
+            return $( this ).each( function() {
                 $( this ).outerHeight( tallest );
             });
         }
     }
+
 
 })( jQuery );

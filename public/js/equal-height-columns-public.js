@@ -8,6 +8,11 @@
 
     $( window ).on( 'load', function() {
 
+    	// Don't do anything if no equal height column elements are specified.
+    	if ( 'undefined' === typeof equalHeightColumnElements ) {
+    		return;
+    	}
+
         // Initialize equal heights using variables passed from PHP.
         $.each( equalHeightColumnElements, function() {
 

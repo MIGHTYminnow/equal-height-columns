@@ -3,12 +3,15 @@
 
 module.exports = function( grunt ) {
 
+	// Grab package as variable for later use/
+	var pkg = grunt.file.readJSON( 'package.json' );
+
 	// Load all tasks.
 	require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
 	// Project configuration
 	grunt.initConfig( {
-		pkg:    grunt.file.readJSON( 'package.json' ),
+		pkg: pkg,
 		devUpdate: {
 	        main: {
 	            options: {
@@ -19,30 +22,63 @@ module.exports = function( grunt ) {
 	            }
 	        }
 	    },
-		jshint: {
-			all: [
-				'Gruntfile.js',
-				'assets/js/src/**/*.js',
-				'assets/js/test/**/*.js'
-			],
-			options: {
-				curly:   true,
-				eqeqeq:  true,
-				immed:   true,
-				latedef: true,
-				newcap:  true,
-				noarg:   true,
-				sub:     true,
-				undef:   true,
-				boss:    true,
-				eqnull:  true,
-				globals: {
-					exports: true,
-					module:  false
+	    prompt: {
+			version: {
+				options: {
+					questions: [
+						{
+							config:  'newVersion',
+							type:    'input',
+							message: 'What specific version would you like',
+							default: '<%= pkg.version %>' 
+						}
+					]
 				}
 			}
 		},
-		// https://www.npmjs.org/package/grunt-wp-i18n
+		replace: {
+			package: {
+				src: ['package.json'],
+   				overwrite: true,
+    			replacements: [
+	    			{
+	    				  "version": "1.0.0",
+	    				from: /("version":\s*).*,\n/g,
+	    				to: '$1"<%= newVersion %>",\n'
+	    			}
+    			]
+			},
+			readme: {
+				src: ['readme.txt'],
+   				overwrite: true,
+    			replacements: [
+	    			{
+	    				from: /(Stable tag:\s*).*\n/g,
+	    				to: '$1<%= newVersion %>\n'
+	    			}
+    			]
+			},
+			php: {
+				src: ['equal-height-columns.php'],
+   				overwrite: true,
+    			replacements: [
+	    			{
+	    				from: /(\*\s*Version:\s*).*\n/g,
+	    				to: '$1<%= newVersion %>\n'
+	    			}
+    			]
+			}
+		},
+		wp_readme_to_markdown: {
+			your_target: {
+	      		files: {
+	      			'readme.md': 'readme.txt'
+	      		},
+	      		options:{
+   					screenshot_url: '',
+				},
+ 		 	},
+		},
 	    makepot: {
 	        target: {
 	            options: {
@@ -52,16 +88,18 @@ module.exports = function( grunt ) {
 	            }
 	        }
 	    },
-		clean: {
-			main: ['release/<%= pkg.version %>']
-		},
 		copy: {
-			// Copy the plugin to a versioned release directory
-			main: {
+			svnAssets: {
+				cwd: 'assets/',
+				src: ['**'],
+				dest: 'svn/assets/',
+				expand: true,
+			},
+			svnTrunk: {
 				src:  [
 					'**',
 					'!node_modules/**',
-					'!release/**',
+					'!svn/**',
 					'!.git/**',
 					'!.sass-cache/**',
 					'!css/src/**',
@@ -72,39 +110,29 @@ module.exports = function( grunt ) {
 					'!Gruntfile.js',
 					'!package.json',
 					'!.gitignore',
-					'!.gitmodules'
+					'!.gitmodules',
+					'!composer*',
+					'!vendor/autoload.php',
+					'!vendor/composer/**',
+					'!readme.md'
 				],
-				dest: 'release/<%= pkg.version %>/equal-height-columns/'
-			}
-		},
-		compress: {
-			main: {
-				options: {
-					mode: 'zip',
-					archive: './release/<%= pkg.version %>/equal-height-columns.zip'
-				},
+				dest: 'svn/trunk/',
+			},
+			svnTags: {
+				cwd:  'svn/trunk/',
+				src: ['**'],
+				dest: 'svn/tags/<%= newVersion %>/',
 				expand: true,
-				cwd: 'release/<%= pkg.version %>/',
-				src: ['**/*']
 			}
 		}
 	} );
 
-	// Default task.
-
-	grunt.registerTask( 'default', [
-		'jshint',
-		'makepot'
-	] );
-
-
 	grunt.registerTask( 'build', [
-		'devUpdate',
-		'default',
+		'prompt',
+		'replace',
+		'wp_readme_to_markdown',
 		'makepot',
-		'clean',
-		'copy',
-		'compress'
+		'copy'
 	] );
 
 	grunt.util.linefeed = '\n';

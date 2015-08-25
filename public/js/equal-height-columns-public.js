@@ -219,9 +219,9 @@
 		var minHeight, maxHeight, breakPoint, tallest, e, a, width;
 
 		// Make all variables optional.
-		minHeight = ( minHeight ) ? minHeight : 0;
-		maxHeight = ( maxHeight ) ? maxHeight : 0;
-		breakPoint = ( breakPoint ) ? breakPoint : 0;
+		minHeight = minHeight || 0;
+		maxHeight = maxHeight || 0;
+		breakPoint = breakPoint || 0;
 
 		// Calculate the tallest item.
 		tallest = minHeight;

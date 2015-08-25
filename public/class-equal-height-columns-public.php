@@ -86,7 +86,9 @@ class Equal_Height_Columns_Public {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/equal-height-columns-public.js', array( 'jquery' ), $this->version, false );
 
-		wp_localize_script( $this->plugin_name, 'equalHeightColumnElements', $this->options );
+		if ( $this->options ) {
+			wp_localize_script( $this->plugin_name, 'equalHeightColumnElements', $this->options );
+		}
 
 	}
 

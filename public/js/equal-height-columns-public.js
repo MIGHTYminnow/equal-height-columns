@@ -216,10 +216,15 @@
 	$.fn.equalizeTheHeights = function( minHeight, maxHeight, breakPoint ) {
 
 		// Scope our variables.
-		var tallest, e, a, width;
+		var minHeight, maxHeight, breakPoint, tallest, e, a, width;
+
+		// Make all variables optional.
+		minHeight = ( minHeight ) ? minHeight : 0;
+		maxHeight = ( maxHeight ) ? maxHeight : 0;
+		breakPoint = ( breakPoint ) ? breakPoint : 0;
 
 		// Calculate the tallest item.
-		tallest = ( minHeight ) ? minHeight : 0;
+		tallest = minHeight;
 		$( this ).each( function() {
 			$( this ).outerHeight( 'auto' );
 			if ( $( this ).outerHeight() > tallest ) {
@@ -230,7 +235,7 @@
 		// Get viewport width (taking scrollbars into account).
 		e = window;
 		a = 'inner';
-		if ( !( 'innerWidth' in window ) ) {
+		if ( ! ( 'innerWidth' in window ) ) {
 			a = 'client';
 			e = document.documentElement || document.body;
 		}

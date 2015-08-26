@@ -66,6 +66,25 @@ When entering a selector on the settings page or using the `initEqualHeights()` 
 	jQuery( window ).trigger( 'equalheights' );
 
 
+Another option for controlling which elements get equalized is the `equal_height_columns_elements` filter. This filter operates on the array of data that gets passed to the JS right before it is passed. This allows for developers to specify selectors that can't be deleted from the settings page, and for programmaticly building selectors based on dynamic data. Here's an example of how the filter can be used:
+
+
+	add_filter( 'equal_height_columns_elements', 'custom_ehc_elements' );
+	function custom_ehc_elements( $elements ) {
+	
+		$elements['element-groups']['custom'] = array(
+			'selector'   => '.ehc-target', // Selector goes here.
+			'breakpoint' => '768',
+		);
+	
+		return $elements;
+	}
+
+
+The keys on the `element-groups` array used by selectors entered on the settings page will come in as numbered indexes, so to avoid collision it's best to use named keys for any custom selectors (we're using 'custom' in the example above, but any unique string will work).
+
+This plugin is [on Github](https://github.com/MIGHTYminnow/equal-height-columns) and pull requests are always welcome.
+
 ## Frequently Asked Questions ##
 
 ### Is this plugin fully responsive? ###
@@ -108,6 +127,7 @@ Or if you'd prefer to just trigger the equalizing of the heights without involvi
 ### 1.1.0 ###
 * Add new method `equalizeTheHeights()` to allow direct equalizing of the heights without involving events
 * Better code formatting and usage examples in the block comments
+* Add new filter `equal_height_columns_elements`
 
 ### 1.0.3 ###
 * Fix JS error on activation (Uncaught TypeError: Cannot use 'in' operator to search for 'length' in...)
@@ -127,6 +147,7 @@ Or if you'd prefer to just trigger the equalizing of the heights without involvi
 ### 1.1.0 ###
 * Add new method `equalizeTheHeights()` to allow direct equalizing of the heights without involving events
 * Better code formatting and usage examples in the block comments
+* Add new filter `equal_height_columns_elements`
 
 ### 1.0.3 ###
 * Fix JS error on activation (Uncaught TypeError: Cannot use 'in' operator to search for 'length' in...

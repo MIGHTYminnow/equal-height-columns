@@ -125,6 +125,7 @@ jQuery( '.selector' ).equalizeTheHeights();
 = 1.1.0 =
 * Add new method `equalizeTheHeights()` to allow direct equalizing of the heights without involving events
 * Better code formatting and usage examples in the block comments
+* Add new filter `equal_height_columns_elements`
 
 = 1.0.3 =
 * Fix JS error on activation (Uncaught TypeError: Cannot use 'in' operator to search for 'length' in...)
@@ -144,6 +145,7 @@ jQuery( '.selector' ).equalizeTheHeights();
 = 1.1.0 =
 * Add new method `equalizeTheHeights()` to allow direct equalizing of the heights without involving events
 * Better code formatting and usage examples in the block comments
+* Add new filter `equal_height_columns_elements`
 
 = 1.0.3 =
 * Fix JS error on activation (Uncaught TypeError: Cannot use 'in' operator to search for 'length' in...

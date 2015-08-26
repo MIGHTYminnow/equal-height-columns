@@ -2,10 +2,10 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Equal Height Columns 1.0.3\n"
+"Project-Id-Version: Equal Height Columns 1.1.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/equal-height-columns\n"
-"POT-Creation-Date: 2015-08-21 17:30:29+00:00\n"
+"POT-Creation-Date: 2015-08-26 19:02:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,6 +18,9 @@ msgstr ""
 #: svn/tags/1.0.0/admin/class-equal-height-columns-admin.php:221
 #: svn/tags/1.0.1/admin/class-equal-height-columns-admin.php:221
 #: svn/tags/1.0.2/admin/class-equal-height-columns-admin.php:223
+#: svn/tags/1.0.3/admin/class-equal-height-columns-admin.php:223
+#: svn/tags/1.1.0/admin/class-equal-height-columns-admin.php:223
+#: svn/trunk/admin/class-equal-height-columns-admin.php:223
 msgid "+ Add More"
 msgstr ""
 
@@ -25,6 +28,9 @@ msgstr ""
 #: svn/tags/1.0.0/admin/class-equal-height-columns-admin.php:240
 #: svn/tags/1.0.1/admin/class-equal-height-columns-admin.php:240
 #: svn/tags/1.0.2/admin/class-equal-height-columns-admin.php:242
+#: svn/tags/1.0.3/admin/class-equal-height-columns-admin.php:242
+#: svn/tags/1.1.0/admin/class-equal-height-columns-admin.php:242
+#: svn/trunk/admin/class-equal-height-columns-admin.php:242
 msgid "<br />Instructions"
 msgstr ""
 
@@ -32,12 +38,18 @@ msgstr ""
 #: svn/tags/1.0.0/admin/class-equal-height-columns-admin.php:253
 #: svn/tags/1.0.1/admin/class-equal-height-columns-admin.php:253
 #: svn/tags/1.0.2/admin/class-equal-height-columns-admin.php:255
+#: svn/tags/1.0.3/admin/class-equal-height-columns-admin.php:255
+#: svn/tags/1.1.0/admin/class-equal-height-columns-admin.php:255
+#: svn/trunk/admin/class-equal-height-columns-admin.php:255
 msgid "Group #"
 msgstr ""
 
 #: admin/class-equal-height-columns-admin.php:290
 #: svn/tags/1.0.0/admin/class-equal-height-columns-admin.php:288
 #: svn/tags/1.0.2/admin/class-equal-height-columns-admin.php:290
+#: svn/tags/1.0.3/admin/class-equal-height-columns-admin.php:290
+#: svn/tags/1.1.0/admin/class-equal-height-columns-admin.php:290
+#: svn/trunk/admin/class-equal-height-columns-admin.php:290
 msgid ""
 "<b>Selector:</b> jQuery/CSS selectors of the elements you wish to target. "
 "Examples: <code>.col-1, .col-2</code> or <code>.container .col</code>"
@@ -46,6 +58,9 @@ msgstr ""
 #: admin/class-equal-height-columns-admin.php:291
 #: svn/tags/1.0.0/admin/class-equal-height-columns-admin.php:289
 #: svn/tags/1.0.2/admin/class-equal-height-columns-admin.php:291
+#: svn/tags/1.0.3/admin/class-equal-height-columns-admin.php:291
+#: svn/tags/1.1.0/admin/class-equal-height-columns-admin.php:291
+#: svn/trunk/admin/class-equal-height-columns-admin.php:291
 msgid ""
 "<b>Breakpoint:</b> Screen width <i>above</i> which you want equal heights "
 "to take effect.</code>"
@@ -56,6 +71,9 @@ msgstr ""
 #: svn/tags/1.0.1/admin/class-equal-height-columns-admin.php:288
 #: svn/tags/1.0.1/admin/class-equal-height-columns-admin.php:301
 #: svn/tags/1.0.2/admin/class-equal-height-columns-admin.php:303
+#: svn/tags/1.0.3/admin/class-equal-height-columns-admin.php:303
+#: svn/tags/1.1.0/admin/class-equal-height-columns-admin.php:303
+#: svn/trunk/admin/class-equal-height-columns-admin.php:303
 msgid "Selector:"
 msgstr ""
 
@@ -63,6 +81,9 @@ msgstr ""
 #: svn/tags/1.0.0/admin/class-equal-height-columns-admin.php:309
 #: svn/tags/1.0.1/admin/class-equal-height-columns-admin.php:309
 #: svn/tags/1.0.2/admin/class-equal-height-columns-admin.php:311
+#: svn/tags/1.0.3/admin/class-equal-height-columns-admin.php:311
+#: svn/tags/1.1.0/admin/class-equal-height-columns-admin.php:311
+#: svn/trunk/admin/class-equal-height-columns-admin.php:311
 msgid ".col-1, .col-2, .col-3"
 msgstr ""
 
@@ -71,6 +92,9 @@ msgstr ""
 #: svn/tags/1.0.1/admin/class-equal-height-columns-admin.php:289
 #: svn/tags/1.0.1/admin/class-equal-height-columns-admin.php:317
 #: svn/tags/1.0.2/admin/class-equal-height-columns-admin.php:319
+#: svn/tags/1.0.3/admin/class-equal-height-columns-admin.php:319
+#: svn/tags/1.1.0/admin/class-equal-height-columns-admin.php:319
+#: svn/trunk/admin/class-equal-height-columns-admin.php:319
 msgid "Breakpoint:"
 msgstr ""
 
@@ -78,6 +102,9 @@ msgstr ""
 #: svn/tags/1.0.0/admin/class-equal-height-columns-admin.php:330
 #: svn/tags/1.0.1/admin/class-equal-height-columns-admin.php:330
 #: svn/tags/1.0.2/admin/class-equal-height-columns-admin.php:332
+#: svn/tags/1.0.3/admin/class-equal-height-columns-admin.php:332
+#: svn/tags/1.1.0/admin/class-equal-height-columns-admin.php:332
+#: svn/trunk/admin/class-equal-height-columns-admin.php:332
 msgid "Remove"
 msgstr ""
 

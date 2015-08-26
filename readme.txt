@@ -4,7 +4,7 @@ Donate link:       http://mightyminnow.com
 Tags:              equal, height, column, div, element, jQuery, JavaScript
 Requires at least: 3.5
 Tested up to:      4.4
-Stable tag:        1.0.3
+Stable tag:        1.1.0
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,17 +36,22 @@ Equal Height Columns lets you easily equalize the height of various columns and 
 
 = Advanced =
 
-Want to trigger the equalizing of the heights manually? No problem. You can skip entering a selector on the settings page and call the jQuery script yourself:
+Want to trigger the equalizing of the heights manually? No problem. You can skip entering a selector on the settings page and call the jQuery script yourself using one of two functions:
 
 `
 jQuery( '.selector' ).initEqualHeights();
+
+// Or
+
+jQuery( '.selector' ).equalizeTheHeights();
 `
 
-The function initEqualHeights takes three optional arguments, the minimum height (number of pixels), maximum height, and the breakpoint (below which the heights will revert to their original size):
+The difference between these two functions is simply that `initEqualHeights()` will set up all the events for recalculating the heights when the window is resized or the global `equalheights` event is triggered, but `equalizeTheHeights()` will simply equalize the heights without involving any events.
+
+Both functions take three optional arguments, the minimum height (number of pixels), maximum height, and the breakpoint (below which the heights will revert to their original size):
 
 `
 jQuery( '.selector' ).initEqualHeights( minHeight, maxHeight, breakPoint );
-
 `
 
 So an example might look like this:
@@ -55,7 +60,7 @@ So an example might look like this:
 jQuery( '.selector' ).initEqualHeights( 200, 500, 768 );
 `
 
-This plugin also adds an event 'equalheights' to the window, allowing you to easily trigger the equalizing manually. This is useful if you have added new items to the page after it loads via AJAX. You can trigger the event like this:
+When entering a selector on the settings page or using the `initEqualHeights()` method this plugin also adds an event 'equalheights' to the window, allowing you to easily trigger the equalizing manually. This is useful if you have added new items to the page after it loads via AJAX. You can trigger the event like this:
 
 `
 jQuery( window ).trigger( 'equalheights' );
@@ -79,6 +84,12 @@ The jQuery script uses the selector to always grab the items fresh from the DOM 
 jQuery( window ).trigger( 'equalheights' );
 `
 
+Or if you'd prefer to just trigger the equalizing of the heights without involving any events, you can call the `equalizeTheHeights()` method directly like this:
+
+`
+jQuery( '.selector' ).equalizeTheHeights();
+`
+
 == Screenshots ==
 
 1. The easy-to-use admin interface.
@@ -91,6 +102,10 @@ jQuery( window ).trigger( 'equalheights' );
 1. Activate Equal Height Columns through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 1.1.0 =
+* Add new method `equalizeTheHeights()` to allow direct equalizing of the heights without involving events
+* Better code formatting and usage examples in the block comments
 
 = 1.0.3 =
 * Fix JS error on activation (Uncaught TypeError: Cannot use 'in' operator to search for 'length' in...)
@@ -106,6 +121,10 @@ jQuery( window ).trigger( 'equalheights' );
 * First release
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+* Add new method `equalizeTheHeights()` to allow direct equalizing of the heights without involving events
+* Better code formatting and usage examples in the block comments
 
 = 1.0.3 =
 * Fix JS error on activation (Uncaught TypeError: Cannot use 'in' operator to search for 'length' in...

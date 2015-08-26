@@ -63,7 +63,6 @@ class Equal_Height_Columns_Public {
 
 		// Check whether we have at least one selector set.
 		$this->options = get_option( $this->plugin_name );
-
 	}
 
 	/**
@@ -74,7 +73,6 @@ class Equal_Height_Columns_Public {
 	public function enqueue_styles() {
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/equal-height-columns-public.css', array(), $this->version, 'all' );
-
 	}
 
 	/**
@@ -90,7 +88,6 @@ class Equal_Height_Columns_Public {
 		if ( $this->options ) {
 			wp_localize_script( $this->plugin_name, 'equalHeightColumnElements', $this->options );
 		}
-
 	}
 
 }

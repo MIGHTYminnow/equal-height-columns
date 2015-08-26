@@ -58,13 +58,23 @@ module.exports = function( grunt ) {
 	    			}
     			]
 			},
-			php: {
+			pluginHeader: {
 				src: ['equal-height-columns.php'],
    				overwrite: true,
-    			replacements: [
+    				replacements: [
 	    			{
 	    				from: /(\*\s*Version:\s*).*\n/g,
 	    				to: '$1<%= newVersion %>\n'
+	    			}
+    			]
+			},
+			pluginPHP: {
+				src: ['includes/equal-height-columns.php'],
+   				overwrite: true,
+    				replacements: [
+	    			{
+	    				from: /(\$this\-\>version\s=\s').*(';)\n/g,
+	    				to: '$1<%= newVersion %>$2\n'
 	    			}
     			]
 			}

@@ -12,6 +12,8 @@ Easily equalize the height of columns or any collection of elements.
 
 == Description ==
 
+**Like this plugin? Please consider [leaving a 5-star review](https://wordpress.org/support/view/plugin-reviews/equal-height-columns).**
+
 Equal Height Columns lets you easily equalize the height of various columns and elements.
 
 = Features =

@@ -1,5 +1,5 @@
 # Equal Height Columns #
-**Contributors:**      MIGHTYminnow, Braad, McGuive7  
+**Contributors:** [MIGHTYminnow](https://profiles.wordpress.org/MIGHTYminnow), [Braad](https://profiles.wordpress.org/Braad), [McGuive7](https://profiles.wordpress.org/McGuive7)  
 **Donate link:**       http://mightyminnow.com  
 **Tags:**              equal, height, column, div, element, jQuery, JavaScript  
 **Requires at least:** 3.5  
@@ -11,6 +11,8 @@
 Easily equalize the height of columns or any collection of elements.
 
 ## Description ##
+
+**Like this plugin? Please consider [leaving a 5-star review](https://wordpress.org/support/view/plugin-reviews/equal-height-columns).**
 
 Equal Height Columns lets you easily equalize the height of various columns and elements.
 
@@ -111,9 +113,7 @@ Or if you'd prefer to just trigger the equalizing of the heights without involvi
 
 ## Screenshots ##
 
-### 1. The easy-to-use admin interface. ###
-![The easy-to-use admin interface.]()
-
+1. The easy-to-use admin interface.
 
 ## Installation ##
 

@@ -1,12 +1,12 @@
 === Equal Height Columns ===
-Contributors:      MIGHTYminnow, Braad, McGuive7
-Donate link:       http://mightyminnow.com
-Tags:              equal, height, column, div, element, jQuery, JavaScript
+Contributors: MIGHTYminnow, Braad, McGuive7, aebs90
+Donate link: http://mightyminnow.com
+Tags: equal, height, column, div, element, jQuery, JavaScript
 Requires at least: 3.5
-Tested up to:      5.3
-Stable tag:        1.1.0
-License:           GPLv2 or later
-License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+Tested up to: 5.3
+Stable tag: 1.1.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Easily equalize the height of columns or any collection of elements.
 

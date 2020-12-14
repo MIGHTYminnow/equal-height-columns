@@ -38,6 +38,9 @@
 				// Set the breakpoint
 				breakpoint = this.breakpoint;
 
+				// Set the selector (needed on latest jQuery versions)
+				$selector.selector = this.selector;
+
 				// Start the party
 				$selector.initEqualHeights( null, null, breakpoint );
 			});

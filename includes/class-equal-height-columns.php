@@ -65,7 +65,7 @@ class Equal_Height_Columns {
 
 		$this->plugin_name = 'equal-height-columns';
 		$this->plugin_display_name = __( 'Equal Height Columns', 'equal-height-columns' );
-		$this->version = '1.1.0';
+		$this->version = '1.1.2';
 
 		$this->load_dependencies();
 		$this->set_locale();

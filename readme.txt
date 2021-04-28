@@ -3,8 +3,8 @@ Contributors: MIGHTYminnow, Braad, McGuive7, aebs90
 Donate link: http://mightyminnow.com
 Tags: equal, height, column, div, element, jQuery, JavaScript
 Requires at least: 3.5
-Tested up to: 5.6
-Stable tag: 1.1.2
+Tested up to: 5.7
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

@@ -124,6 +124,12 @@ Or if you'd prefer to just trigger the equalizing of the heights without involvi
 
 ## Changelog ##
 
+### 1.1.3 ###
+* Fix PHP warning.
+
+### 1.1.2 ###
+* Update version number of the main javascript file to force clearing cache.
+
 ### 1.1.1 ###
 * BUGFIX: The plugin was not working with WordPress 5.6 due a jQuery update incompatibility.
 

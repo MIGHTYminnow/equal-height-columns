@@ -124,6 +124,9 @@ jQuery( '.selector' ).equalizeTheHeights();
 
 == Changelog ==
 
+= 1.1.3 =
+* Fix PHP warning.
+
 = 1.1.2 =
 * Update version number of the main javascript file to force clearing cache.
 

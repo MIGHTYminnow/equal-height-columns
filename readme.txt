@@ -1,5 +1,5 @@
 === Equal Height Columns ===
-Contributors: MIGHTYminnow, Braad, McGuive7, aebs90
+Contributors: MIGHTYminnow, Braad, McGuive7
 Donate link: http://mightyminnow.com
 Tags: equal, height, column, div, element, jQuery, JavaScript
 Requires at least: 3.5
@@ -123,6 +123,9 @@ jQuery( '.selector' ).equalizeTheHeights();
 1. Activate Equal Height Columns through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 1.1.2 =
+* Update version number of the main javascript file to force clearing cache.
 
 = 1.1.1 =
 * BUGFIX: The plugin was not working with WordPress 5.6 due a jQuery update incompatibility.

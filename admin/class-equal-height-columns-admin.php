@@ -245,7 +245,7 @@ class Equal_Height_Columns_Admin {
         );
 
         // Set number of fields to output (number of saved groups, or 1 if none are saved).
-        $field_count = ( ( $this->options ) &&  count( $this->options[ $this->options_group_slug ] ) ) ? count( $this->options[ $this->options_group_slug ] ) : 1;
+	$field_count = ( ( $this->options ) &&  count( $this->options[ $this->options_group_slug ] ) ) ? count( $this->options[ $this->options_group_slug ] ) : 1;
 
         // Output correct number of fields.
         for ( $i = 1; $i <= $field_count; $i++ ) {

@@ -43,6 +43,11 @@
 
 				// Start the party
 				$selector.initEqualHeights( null, null, breakpoint );
+
+				// Restart the party if an image is lazy loaded
+				$( $selector.selector).find( 'img[loading="lazy"]' ).on( 'load', function(){
+					$selector.equalizeTheHeights( null, null, breakpoint );
+				});
 			});
 		});
 	});

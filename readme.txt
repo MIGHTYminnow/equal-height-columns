@@ -3,7 +3,7 @@ Contributors: MIGHTYminnow, Braad, McGuive7
 Donate link: http://mightyminnow.com
 Tags: equal, height, column, div, element, jQuery, JavaScript
 Requires at least: 3.5
-Tested up to: 5.8.1
+Tested up to: 5.9.2
 Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,6 +11,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Easily equalize the height of columns or any collection of elements.
 
 == Description ==
+
+**Compatible with PHP 8.0**
 
 **Like this plugin? Please consider [leaving a 5-star review](https://wordpress.org/support/view/plugin-reviews/equal-height-columns).**
 

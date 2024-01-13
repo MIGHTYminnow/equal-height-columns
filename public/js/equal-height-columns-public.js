@@ -221,15 +221,16 @@
 	}
 
 	// Function for directly equalizing heights WITHOUT setting up any events.
-	$.fn.equalizeTheHeights = function( minHeight, maxHeight, breakPoint ) {
+	$.fn.equalizeTheHeights = function( minHeight, maxHeight, breakPoint, breakPointMax ) {
 
 		// Scope our variables.
-		var minHeight, maxHeight, breakPoint, tallest, e, a, width;
+		var minHeight, maxHeight, breakPoint, breakPointMax, tallest, e, a, width;
 
 		// Make all variables optional.
 		minHeight = minHeight || 0;
 		maxHeight = maxHeight || 0;
 		breakPoint = breakPoint || 0;
+		breakPointMax = breakPointMax || Number.MAX_SAFE_INTEGER;
 
 		// Calculate the tallest item.
 		tallest = minHeight;
@@ -249,8 +250,8 @@
 		}
 		width = e[ a + 'Width' ];
 
-		// Equalize heights if viewport width is above the breakpoint.
-		if ( width >= breakPoint ) {
+		// Equalize heights if viewport width is above the breakpoint and below the max-breakpoint.
+		if ( width >= breakPoint && width <= breakPointMax ) {
 			if ( ( maxHeight ) && tallest > maxHeight ) {
 				tallest = maxHeight;
 			}
@@ -260,4 +261,26 @@
 		}
 	}
 
+	$.fn.equalHeight = function( selector, columns, min, max ) {
+		selector = selector || '';
+		columns = columns || 0;
+		min = min || 0;
+		max = max || Number.MAX_SAFE_INTEGER;
+
+		$( window ).on( 'resize orientationchange equalheights', debounce( function() {
+			let width = $( window ).width();
+			if ( width >= min && width <= max ) {
+				let start;
+				let end;
+				let $elements = $( selector );
+
+				for ( start = 0, end = columns; end <= $elements.size(); start = end, end = end + columns ) {
+					$elements.slice( start, end ).equalizeTheHeights();
+				}
+				$elements.slice( start, end ).equalizeTheHeights();
+			}
+		} ) );
+
+		$( window ).trigger( 'equalheights' );
+	}
 })( jQuery );

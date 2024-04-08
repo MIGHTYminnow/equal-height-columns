@@ -3,7 +3,7 @@
 **Donate link:**       http://mightyminnow.com  
 **Tags:**              equal, height, column, div, element, jQuery, JavaScript  
 **Requires at least:** 3.5  
-**Tested up to:**      6.4.3
+**Tested up to:**      6.5.0
 **Stable tag:**        1.2.0  
 **License:**           GPLv2 or later  
 **License URI:**       http://www.gnu.org/licenses/gpl-2.0.html  

@@ -91,11 +91,11 @@ This plugin is [on Github](https://github.com/MIGHTYminnow/equal-height-columns)
 
 #### NEW: Multi rows ####
 
-On version **1.2.0** we are introducing a new feature *(for now, only available via JavaScript)* that resolves a common issue where you set equal height for a group of elements, but the row number of certain elements varies across breakpoints when the number of columns changes.
+On version **1.2.0** we are introducing a new feature *(for now, only available via JavaScript)* that resolves a common issue if the row number of certain elements varies across breakpoints when the number of columns change.
 
 For example, if we have 2 columns for tablets and 3 columns for desktops, the third element in the group would be positioned on the second row for tablets but on the first row for desktops.
 
-Before this new feature, the equal height would be based on all the elements from the group, making it look bad. Now you can have something like "subgroups" for each row, and recalculate when the number of columns in the rows change.
+Before this new feature, the equal height would be based on all the elements from the group. Now you can have "subgroups" for each row, and recalculate when the number of columns in the rows change.
 
 To use this new feature add the function once per breakpoint:
 
@@ -109,7 +109,7 @@ To use this new feature add the function once per breakpoint:
 
  **maxWidth:** The maximum width of the breakpoint. You can leave empty for the biggest breakpoint.
 
-The following example would apply equal height for headings with the class **.demo-heading** in a grid that have 1 column per row on mobile, 2 columns on tablet and 3 columns on desktop:
+The following example would apply equal height for headings with the class **.demo-heading** in a grid that has 1 column per row on mobile, 2 columns on tablet and 3 columns on desktop:
 
 	$( document ).equalHeight( '.demo-heading', 1, 1, 767 ); // 1 columns for 1px - 767px
 	$( document ).equalHeight( '.demo-heading', 2, 768, 1024 ); // 2 columns for 768px - 1024px

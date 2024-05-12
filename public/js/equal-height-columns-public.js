@@ -117,12 +117,24 @@
 		};
 	};
 
+	let manualElementsCount = 0;
+
 	// Main function for equalizing heights AND setting up events.
 	$.fn.initEqualHeights = function( minHeight, maxHeight, breakPoint ) {
 
 		// Scope our variables.
 		var selector, minHeight, maxHeight, breakPoint, args, eventData,
 			ourEvents, eventSet, thisEvent, eventName;
+
+		/*
+		The .selector property was removed on jQuery 1.9, we already addressed this for the default elements
+		but manual instances (directly calling .initEqualHeights()) were not working without this.
+		*/
+		if ( 'undefined' == typeof this.selector ) {
+			this.addClass( 'equal-height-columns-manual-' + manualElementsCount );
+			this.selector = '.equal-height-columns-manual-' + manualElementsCount;
+			manualElementsCount++;
+		}
 
 		// Get the selector used to call equalHeights.
 		selector = this.selector;

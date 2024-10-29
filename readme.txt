@@ -139,6 +139,10 @@ Or if you'd prefer to just trigger the equalizing of the heights without involvi
 jQuery( '.selector' ).equalizeTheHeights();
 `
 
+= How can I report security bugs? =
+
+You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/equal-height-columns)
+
 == Screenshots ==
 
 1. The easy-to-use admin interface.

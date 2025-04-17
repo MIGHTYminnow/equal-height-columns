@@ -125,7 +125,6 @@ class Equal_Height_Columns_Admin {
 	public function output_options_page() {
 		?>
 		<div class="wrap mm-settings">
-            <?php screen_icon(); ?>
             <h2><?php echo $this->plugin_display_name; ?></h2>
             <div id="poststuff">
                 <div id="post-body" class="columns-2">

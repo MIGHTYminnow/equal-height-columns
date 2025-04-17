@@ -4,7 +4,7 @@ Donate link: http://mightyminnow.com
 Tags: equal, height, column, div, element, jQuery, JavaScript
 Requires at least: 3.5
 Tested up to: 6.7.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -155,6 +155,9 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 1. Activate Equal Height Columns through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+### 1.2.2 ###
+* BUGFIX: Deprecated: Function screen_icon is deprecated
 
 ### 1.2.1 ###
 * BUGFIX: Manual call to .initEqualHeights() was not working with recent jQuery versions.

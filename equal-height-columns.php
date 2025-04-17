@@ -9,7 +9,7 @@
  * @wordpress-plugin
  * Plugin Name:       Equal Height Columns
  * Description:       Apply equal heights to uneven columns and elements.
- * Version:           1.2.1
+ * Version:           1.2.2
  * Author:            MIGHTYminnow, Mickey Kay, Braad Martin
  * Author URI:        http://mightyminnow.com
  * License:           GPL-2.0+
@@ -65,4 +65,11 @@ function run_equal_height_columns() {
 	$plugin->run();
 
 }
-run_equal_height_columns();
+
+// Delay running until WordPress is ready
+add_action(
+    'init',
+    static function () {
+        run_equal_height_columns();
+    },
+);

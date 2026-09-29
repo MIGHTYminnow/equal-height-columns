@@ -275,7 +275,7 @@
 
 	$.fn.equalHeight = function( selector, columns, min, max ) {
 		selector = selector || '';
-		columns = columns || 0;
+		columns = parseInt( columns, 10 ) || 0;
 		min = min || 0;
 		max = max || Number.MAX_SAFE_INTEGER;
 
@@ -286,7 +286,13 @@
 				let end;
 				let $elements = $( selector );
 
-				for ( start = 0, end = columns; end <= $elements.size(); start = end, end = end + columns ) {
+				// Without a valid number of columns, equalize all the elements as a single row.
+				if ( columns < 1 ) {
+					$elements.equalizeTheHeights();
+					return;
+				}
+
+				for ( start = 0, end = columns; end <= $elements.length; start = end, end = end + columns ) {
 					$elements.slice( start, end ).equalizeTheHeights();
 				}
 				$elements.slice( start, end ).equalizeTheHeights();
